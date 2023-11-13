@@ -1,0 +1,31 @@
+{
+  "name": "scott-bot",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 8000",
+    "build": "next build",
+    "start": "next start -p 8000",
+    "start:dev": "next dev -p 8000",
+    "lint": "next lint --fix && tsc --noEmit"
+  },
+  "packageManager": "yarn@4.0.1",
+  "dependencies": {
+    "next": "^14.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8",
+    "@types/node": "^20.9.0",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/ws": "^8",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.53.0",
+    "eslint-config-next": "^14.0.2",
+    "postcss": "^8.4.31",
+    "typescript": "^5.2.2"
+  }
+}
