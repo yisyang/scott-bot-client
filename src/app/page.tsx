@@ -50,7 +50,8 @@ export default function Page() {
     console.debug(data)
     if (data.status === 'DONE') {
       setIsLoading(false)
-      setResponses([...responses, data.response.replace(/\n/g, "<br />")])
+      const color = data.requestId ? 'white' : 'lightblue'
+      setResponses([...responses, `<div style="color:${color};padding:5px">` + data.response.replace(/\n/g, "<br />") + '</div>'])
     } else if (data.status === 'CONNECTED') {
       setIsLoading(false)
     } else {
@@ -68,6 +69,10 @@ export default function Page() {
       await new Promise((resolve) => setTimeout(resolve, 1000))
     }
 
+    setCurrentWsData(JSON.stringify({
+      status: "DONE",
+      response: "Query: " + query
+    }))
     socket.current.send(JSON.stringify({ message: query }))
   }
 
